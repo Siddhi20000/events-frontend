@@ -4,7 +4,7 @@ import Headers from "./Headers";
 
 const EventDetails=()=>{
     const {eventId}= useParams();
-    const {data,loading,error}= useFetch(`https://events-backend-beta.vercel.app/events/${eventId}`);
+    const {data,loading,error}= useFetch(`https://events-backend-roan.vercel.app/events/${eventId}`);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error fetching event details</p>;
