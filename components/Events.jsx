@@ -9,7 +9,7 @@ import Headers from "./Headers";
 const Events=()=>{
     const [eventType, setEventType] = useState("All"); // filter by All/Online/Offline
     const [searchTerm, setSearchTerm] = useState("");   // the simple search text
-    const {data = [],loading,error}= useFetch("http://127.0.0.1:3000/events");
+    const {data = [],loading,error}= useFetch("https://events-backend-roan.vercel.app/");                  //("http://127.0.0.1:3000/events");
 
     const filteredEvent= eventType=== "All"? data: data.filter((event)=> event.eventType=== eventType)
     
