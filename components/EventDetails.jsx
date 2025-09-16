@@ -6,7 +6,7 @@ const EventDetails=()=>{
     const {eventId}= useParams();
     const {data,loading,error}= useFetch(`https://events-backend-lime.vercel.app/events/${eventId}`);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className="container p-3 fs-4 mt-4">Loading...</p>;
     if (error) return <p>Error fetching event details</p>;
     if (!data) return <p>No event found</p>;
 
