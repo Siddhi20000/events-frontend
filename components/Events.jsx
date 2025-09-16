@@ -14,20 +14,15 @@ const Events=()=>{
     const filteredEvent= eventType=== "All"? data: data.filter((event)=> event.eventType=== eventType)
     
     const finalEvents = filteredEvent.filter(event => {
-    if (!searchTerm) return true; // when input is empty, include all (after type filter)
+        if (!searchTerm) return true; // when input is empty, include all (after type filter)
 
-    const term = searchTerm.toLowerCase().trim();
+        const term = searchTerm.toLowerCase().trim();
 
-    // normalize title
-    const title = (event.title || "").toString().toLowerCase();
+        // normalize title
+        const title = (event.title || "").toString().toLowerCase();
 
-    // normalize tags: support both array or comma/string
-    let tagsString = "";
-    if (Array.isArray(event.eventTags)) tagsString = event.eventTags.join(" ").toLowerCase();
-    else if (event.eventTags) tagsString = event.eventTags.toString().toLowerCase();
-
-    // return true if term found in title OR tags
-    return title.includes(term) || tagsString.includes(term);
+        // return true if term found in title OR tags
+        return title.includes(term);
   });
 
     return(
