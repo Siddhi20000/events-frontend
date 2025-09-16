@@ -22,7 +22,7 @@ const EventDetails=()=>{
                         <h6 className="mb-4">{data.hostedBy}</h6>
                         <img src={data.imageUrl} width="400" height="350" />
                         <h4 className="mt-3 mb-3">Details:</h4>
-                        <p>{data.details}</p>
+                        <p className="text-justify" >{data.details}</p>
                         <h4 className="mt-3 mb-3">Additional Information:</h4>
                         <p className="fw-semibold mb-1">Dress Code: <span className="fw-normal">{data.dressCode}</span></p>
                         <p className="fw-semibold mb-1">Age Restrictions: <span className="fw-normal">{data.ageRestrictions}</span></p> 
@@ -46,8 +46,9 @@ const EventDetails=()=>{
                             <div className="row">
                                 {data.author && data.author.length > 0 ? (
                                 data.author.map((speaker) => (
-                                <div className="col-md-4" key={speaker._id}>
-                                <img src={speaker.imageUrl} width="100" height="100" />
+                                //<div className="col-md-4" key={speaker._id}>
+                                <div className="col-12 col-sm-6 col-md-4 mb-3" key={speaker._id}>
+                                <img src={speaker.imageUrl} alt={speaker.name} className="img-fluid" style={{ maxWidth: "120px", height: "auto", objectFit: "cover" }} />
                                 <p className="mt-2 mb-0">{speaker.name}</p>
                                 <div className="fw-normal fs-6 ">{speaker.speakerType}</div>
                             </div>

@@ -52,8 +52,8 @@ const Events=()=>{
                     finalEvents.map((event)=>(
                         <div className="col-md-4" key={event._id}>
                             <NavLink to={`/events/${event._id}`} >
-                            <div className="card mt-3 position-relative">
-                                <img src={event.imageUrl} alt={event.title} />
+                            <div className="card mt-3 position-relative" style={{ height: "350px" }} >
+                                <img src={event.imageUrl} alt={event.title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px"}} />
                                 <p className="mt-2 ms-2 p-1 position-absolute text-dark bg-light rounded">{event.eventType} Event</p>
                             </div>
                             </NavLink>
