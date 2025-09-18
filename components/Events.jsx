@@ -14,14 +14,12 @@ const Events=()=>{
     const filteredEvent= eventType=== "All"? data: data.filter((event)=> event.eventType=== eventType)
     
     const finalEvents = filteredEvent.filter(event => {
-        if (!searchTerm) return true; // when input is empty, include all (after type filter)
+        if (!searchTerm) return true; 
 
         const term = searchTerm.toLowerCase().trim();
 
-        // normalize title
         const title = (event.title || "").toString().toLowerCase();
 
-        // return true if term found in title OR tags
         return title.includes(term);
   });
 
@@ -53,7 +51,18 @@ const Events=()=>{
                             </div>
                             </NavLink>
                             <div>
-                                <p>{event.createdAt}</p>
+                                <p>
+                                    {
+                                    new Date(event.createdAt).toLocaleString("en-IN", {
+                                    timeZone: "Asia/Kolkata",
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                    hour: "2-digit",
+                                    minute: "2-digit"
+                                    })
+                                    }
+                                </p>
                                 <h5>{event.title}</h5>
                             </div>
                         </div>

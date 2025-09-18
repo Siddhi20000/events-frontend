@@ -36,7 +36,18 @@ const EventDetails=()=>{
                     </div>
                     <div className="col-md-6 mt-5 p-4 justify-content-center">
                         <div className="card p-4" style={{ width: "18rem", height: "12rem" }}>
-                            <p>{data.createdAt}</p>
+                            <p>
+                                {
+                                    new Date(data.createdAt).toLocaleString("en-IN", {
+                                    timeZone: "Asia/Kolkata",
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                    hour: "2-digit",
+                                    minute: "2-digit"
+                                    })
+                                }
+                            </p>
                             <p>Marketing City, 789 Marketing Avenue, City</p>
                             <p>$3000</p>
                         </div>
@@ -50,7 +61,7 @@ const EventDetails=()=>{
                                 <div className="col-12 col-sm-6 col-md-4 mb-3" key={speaker._id}>
                                 <img src={speaker.imageUrl} alt={speaker.name} className="img-fluid" style={{ maxWidth: "120px", height: "auto", objectFit: "cover" }} />
                                 <p className="mt-2 mb-0">{speaker.name}</p>
-                                <div className="fw-normal fs-6 ">{speaker.speakerType}</div>
+                                <div className="fw-normal fs-6 ">{speaker.speakerType}</div> 
                             </div>
                         ))
                         ) : (
