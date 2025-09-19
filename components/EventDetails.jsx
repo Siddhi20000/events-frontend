@@ -34,7 +34,7 @@ const EventDetails=()=>{
                         </button>
                         ))}
                     </div>
-                    <div className="col-md-6 mt-5 p-4 justify-content-center">
+                    <div className="col-md-6 mt-3 p-4 justify-content-center">
                         <div className="card p-4" style={{ width: "18rem", height: "12rem" }}>
                             <p>
                                 {
